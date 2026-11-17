@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LOUDOUT — Coming Soon</title>
+<meta name="description" content="LOUDOUT. Coming soon.">
+<meta name="theme-color" content="#10120e">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LOUDOUT">
+<meta property="og:title" content="LOUDOUT — Coming Soon">
+<meta property="og:description" content="LOUDOUT. Coming soon.">
+<meta property="og:url" content="https://loudout.xyz/">
+<meta property="og:image" content="https://loudout.xyz/og.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LOUDOUT — Coming Soon">
+<meta name="twitter:description" content="LOUDOUT. Coming soon.">
+<meta name="twitter:image" content="https://loudout.xyz/og.jpg">
+<style>
+  html, body { margin: 0; height: 100%; background: #10120e; overflow: hidden; }
+  /* Same picture, blurred and enlarged, only to fill the bars when the screen is not 16:9. */
+  .fill { position: fixed; inset: 0; background: url("coming-soon.webp") center / cover no-repeat;
+          filter: blur(28px) brightness(.85); transform: scale(1.15); }
+  /* The official picture itself: whole, uncropped, centred. */
+  .box { position: fixed; inset: 0; display: grid; place-items: center; }
+  .art { display: block; width: 100%; height: 100%; object-fit: contain; }
+  /* On tall screens (phones upright) the picture would show a hard edge against the blurred bars: soften only that edge. */
+  @media (max-aspect-ratio: 16/10) {
+    .box { align-content: center; }
+    .art { width: 100vw; height: auto; aspect-ratio: 16/9; max-height: 100dvh;
+           -webkit-mask-image: linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
+           mask-image: linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent); }
+  }
+</style>
+</head>
+<body>
+  <div class="fill" aria-hidden="true"></div>
+  <div class="box"><img class="art" src="coming-soon.webp" width="1920" height="1080" alt="LOUDOUT — Coming Soon"></div>
+</body>
+</html>
