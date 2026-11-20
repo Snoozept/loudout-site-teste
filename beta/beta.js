@@ -20,67 +20,78 @@
     ['ru', 'Русский'], ['tr', 'Türkçe'], ['zh', '中文'], ['ja', '日本語'], ['ko', '한국어']];
 
   const T = {
-    en: { kicker: 'CLOSED BETA', title: 'Enter your invite code', sub: 'Each code is personal and works on one device.', unlock: 'UNLOCK', checking: 'CHECKING…',
+    en: { webT: "iPhone · Browser", webS: "No install — plays in Safari", play: "PLAY", w1: "Tap PLAY: the game opens in Safari.", w2: "Tap Share, then “Add to Home Screen”.", w3: "Open LOUDOUT from your home screen — you’re in.",
+      kicker: 'CLOSED BETA', title: 'Enter your invite code', sub: 'Each code is personal and works on one device.', unlock: 'UNLOCK', checking: 'CHECKING…',
       prot: 'Protected by Cloudflare', privacy: 'Privacy', bad: 'This code is not valid.', used: 'This code is already in use on another device.',
       blocked: 'Too many attempts. Try again later.', closed: 'The beta is not open yet. Come back soon.', error: 'Something went wrong. Try again.',
       okK: 'ACCESS GRANTED', okT: 'Welcome to the beta', okS: 'Your code is now linked to this device. Updates arrive inside the game.', dl: 'DOWNLOAD',
       s1: 'Open the downloaded file.', s2: 'If asked, allow installing apps from this source.', s3: 'Open LOUDOUT — you’re in.', valid: 'LINKS VALID FOR 10 MINUTES',
       close: 'Close', lang: 'Language', code: 'Invite code' },
-    pt: { kicker: 'BETA FECHADA', title: 'Introduz o teu código de convite', sub: 'Cada código é pessoal e funciona num só dispositivo.', unlock: 'DESBLOQUEAR', checking: 'A VERIFICAR…',
+    pt: { webT: "iPhone · Navegador", webS: "Sem instalar — joga no Safari", play: "JOGAR", w1: "Toca em JOGAR: o jogo abre no Safari.", w2: "Toca em Partilhar e depois em “Adicionar ao ecrã principal”.", w3: "Abre o LOUDOUT a partir do ecrã principal — já estás dentro.",
+      kicker: 'BETA FECHADA', title: 'Introduz o teu código de convite', sub: 'Cada código é pessoal e funciona num só dispositivo.', unlock: 'DESBLOQUEAR', checking: 'A VERIFICAR…',
       prot: 'Protegido pela Cloudflare', privacy: 'Privacidade', bad: 'Este código não é válido.', used: 'Este código já está a ser usado noutro dispositivo.',
       blocked: 'Demasiadas tentativas. Tenta mais tarde.', closed: 'A beta ainda não abriu. Volta em breve.', error: 'Algo correu mal. Tenta outra vez.',
       okK: 'ACESSO CONCEDIDO', okT: 'Bem-vindo à beta', okS: 'O teu código ficou ligado a este dispositivo. As atualizações chegam dentro do jogo.', dl: 'DESCARREGAR',
       s1: 'Abre o ficheiro descarregado.', s2: 'Se pedir, permite instalar apps desta origem.', s3: 'Abre o LOUDOUT — já estás dentro.', valid: 'LINKS VÁLIDOS DURANTE 10 MINUTOS',
       close: 'Fechar', lang: 'Idioma', code: 'Código de convite' },
-    es: { kicker: 'BETA CERRADA', title: 'Introduce tu código de invitación', sub: 'Cada código es personal y funciona en un solo dispositivo.', unlock: 'DESBLOQUEAR', checking: 'COMPROBANDO…',
+    es: { webT: "iPhone · Navegador", webS: "Sin instalar: se juega en Safari", play: "JUGAR", w1: "Toca JUGAR: el juego se abre en Safari.", w2: "Toca Compartir y luego “Añadir a pantalla de inicio”.", w3: "Abre LOUDOUT desde la pantalla de inicio: ya estás dentro.",
+      kicker: 'BETA CERRADA', title: 'Introduce tu código de invitación', sub: 'Cada código es personal y funciona en un solo dispositivo.', unlock: 'DESBLOQUEAR', checking: 'COMPROBANDO…',
       prot: 'Protegido por Cloudflare', privacy: 'Privacidad', bad: 'Este código no es válido.', used: 'Este código ya se está usando en otro dispositivo.',
       blocked: 'Demasiados intentos. Inténtalo más tarde.', closed: 'La beta aún no está abierta. Vuelve pronto.', error: 'Algo salió mal. Inténtalo de nuevo.',
       okK: 'ACCESO CONCEDIDO', okT: 'Bienvenido a la beta', okS: 'Tu código ya está vinculado a este dispositivo. Las actualizaciones llegan dentro del juego.', dl: 'DESCARGAR',
       s1: 'Abre el archivo descargado.', s2: 'Si te lo pide, permite instalar apps de este origen.', s3: 'Abre LOUDOUT: ya estás dentro.', valid: 'ENLACES VÁLIDOS DURANTE 10 MINUTOS',
       close: 'Cerrar', lang: 'Idioma', code: 'Código de invitación' },
-    fr: { kicker: 'BÊTA FERMÉE', title: 'Entre ton code d’invitation', sub: 'Chaque code est personnel et fonctionne sur un seul appareil.', unlock: 'DÉVERROUILLER', checking: 'VÉRIFICATION…',
+    fr: { webT: "iPhone · Navigateur", webS: "Sans installation : on joue dans Safari", play: "JOUER", w1: "Touche JOUER : le jeu s’ouvre dans Safari.", w2: "Touche Partager, puis « Sur l’écran d’accueil ».", w3: "Ouvre LOUDOUT depuis l’écran d’accueil : tu es dedans.",
+      kicker: 'BÊTA FERMÉE', title: 'Entre ton code d’invitation', sub: 'Chaque code est personnel et fonctionne sur un seul appareil.', unlock: 'DÉVERROUILLER', checking: 'VÉRIFICATION…',
       prot: 'Protégé par Cloudflare', privacy: 'Confidentialité', bad: 'Ce code n’est pas valide.', used: 'Ce code est déjà utilisé sur un autre appareil.',
       blocked: 'Trop de tentatives. Réessaie plus tard.', closed: 'La bêta n’est pas encore ouverte. Reviens bientôt.', error: 'Un problème est survenu. Réessaie.',
       okK: 'ACCÈS ACCORDÉ', okT: 'Bienvenue dans la bêta', okS: 'Ton code est maintenant lié à cet appareil. Les mises à jour arrivent dans le jeu.', dl: 'TÉLÉCHARGER',
       s1: 'Ouvre le fichier téléchargé.', s2: 'Si demandé, autorise l’installation d’apps depuis cette source.', s3: 'Ouvre LOUDOUT : tu es dedans.', valid: 'LIENS VALABLES 10 MINUTES',
       close: 'Fermer', lang: 'Langue', code: 'Code d’invitation' },
-    de: { kicker: 'GESCHLOSSENE BETA', title: 'Gib deinen Einladungscode ein', sub: 'Jeder Code ist persönlich und funktioniert auf einem Gerät.', unlock: 'FREISCHALTEN', checking: 'WIRD GEPRÜFT…',
+    de: { webT: "iPhone · Browser", webS: "Ohne Installation – spielt in Safari", play: "SPIELEN", w1: "Tippe auf SPIELEN: Das Spiel öffnet sich in Safari.", w2: "Tippe auf Teilen und dann auf „Zum Home-Bildschirm“.", w3: "Öffne LOUDOUT vom Home-Bildschirm – du bist drin.",
+      kicker: 'GESCHLOSSENE BETA', title: 'Gib deinen Einladungscode ein', sub: 'Jeder Code ist persönlich und funktioniert auf einem Gerät.', unlock: 'FREISCHALTEN', checking: 'WIRD GEPRÜFT…',
       prot: 'Geschützt durch Cloudflare', privacy: 'Datenschutz', bad: 'Dieser Code ist ungültig.', used: 'Dieser Code wird bereits auf einem anderen Gerät verwendet.',
       blocked: 'Zu viele Versuche. Versuche es später erneut.', closed: 'Die Beta ist noch nicht geöffnet. Schau bald wieder vorbei.', error: 'Etwas ist schiefgelaufen. Versuche es erneut.',
       okK: 'ZUGANG GEWÄHRT', okT: 'Willkommen in der Beta', okS: 'Dein Code ist jetzt mit diesem Gerät verknüpft. Updates kommen direkt im Spiel.', dl: 'HERUNTERLADEN',
       s1: 'Öffne die heruntergeladene Datei.', s2: 'Falls gefragt, erlaube die Installation von Apps aus dieser Quelle.', s3: 'Öffne LOUDOUT – du bist drin.', valid: 'LINKS 10 MINUTEN GÜLTIG',
       close: 'Schließen', lang: 'Sprache', code: 'Einladungscode' },
-    it: { kicker: 'BETA CHIUSA', title: 'Inserisci il tuo codice invito', sub: 'Ogni codice è personale e funziona su un solo dispositivo.', unlock: 'SBLOCCA', checking: 'VERIFICA IN CORSO…',
+    it: { webT: "iPhone · Browser", webS: "Senza installare: si gioca in Safari", play: "GIOCA", w1: "Tocca GIOCA: il gioco si apre in Safari.", w2: "Tocca Condividi, poi “Aggiungi alla schermata Home”.", w3: "Apri LOUDOUT dalla schermata Home: sei dentro.",
+      kicker: 'BETA CHIUSA', title: 'Inserisci il tuo codice invito', sub: 'Ogni codice è personale e funziona su un solo dispositivo.', unlock: 'SBLOCCA', checking: 'VERIFICA IN CORSO…',
       prot: 'Protetto da Cloudflare', privacy: 'Privacy', bad: 'Questo codice non è valido.', used: 'Questo codice è già in uso su un altro dispositivo.',
       blocked: 'Troppi tentativi. Riprova più tardi.', closed: 'La beta non è ancora aperta. Torna presto.', error: 'Qualcosa è andato storto. Riprova.',
       okK: 'ACCESSO CONSENTITO', okT: 'Benvenuto nella beta', okS: 'Il tuo codice ora è collegato a questo dispositivo. Gli aggiornamenti arrivano nel gioco.', dl: 'SCARICA',
       s1: 'Apri il file scaricato.', s2: 'Se richiesto, consenti l’installazione di app da questa fonte.', s3: 'Apri LOUDOUT: sei dentro.', valid: 'LINK VALIDI PER 10 MINUTI',
       close: 'Chiudi', lang: 'Lingua', code: 'Codice invito' },
-    ru: { kicker: 'ЗАКРЫТАЯ БЕТА', title: 'Введите код приглашения', sub: 'Каждый код личный и работает на одном устройстве.', unlock: 'ОТКРЫТЬ', checking: 'ПРОВЕРКА…',
+    ru: { webT: "iPhone · Браузер", webS: "Без установки — игра в Safari", play: "ИГРАТЬ", w1: "Нажмите «ИГРАТЬ»: игра откроется в Safari.", w2: "Нажмите «Поделиться», затем «На экран „Домой“».", w3: "Откройте LOUDOUT с экрана «Домой» — вы в игре.",
+      kicker: 'ЗАКРЫТАЯ БЕТА', title: 'Введите код приглашения', sub: 'Каждый код личный и работает на одном устройстве.', unlock: 'ОТКРЫТЬ', checking: 'ПРОВЕРКА…',
       prot: 'Защищено Cloudflare', privacy: 'Конфиденциальность', bad: 'Этот код недействителен.', used: 'Этот код уже используется на другом устройстве.',
       blocked: 'Слишком много попыток. Попробуйте позже.', closed: 'Бета ещё не открыта. Загляните позже.', error: 'Что-то пошло не так. Попробуйте ещё раз.',
       okK: 'ДОСТУП ОТКРЫТ', okT: 'Добро пожаловать в бету', okS: 'Ваш код привязан к этому устройству. Обновления приходят прямо в игре.', dl: 'СКАЧАТЬ',
       s1: 'Откройте скачанный файл.', s2: 'Если потребуется, разрешите установку приложений из этого источника.', s3: 'Откройте LOUDOUT — вы в игре.', valid: 'ССЫЛКИ ДЕЙСТВУЮТ 10 МИНУТ',
       close: 'Закрыть', lang: 'Язык', code: 'Код приглашения' },
-    tr: { kicker: 'KAPALI BETA', title: 'Davet kodunu gir', sub: 'Her kod kişiseldir ve tek bir cihazda çalışır.', unlock: 'KİLİDİ AÇ', checking: 'KONTROL EDİLİYOR…',
+    tr: { webT: "iPhone · Tarayıcı", webS: "Kurulum yok — Safari’de oynanır", play: "OYNA", w1: "OYNA’ya dokun: oyun Safari’de açılır.", w2: "Paylaş’a, sonra “Ana Ekrana Ekle”ye dokun.", w3: "LOUDOUT’u ana ekrandan aç — artık içeridesin.",
+      kicker: 'KAPALI BETA', title: 'Davet kodunu gir', sub: 'Her kod kişiseldir ve tek bir cihazda çalışır.', unlock: 'KİLİDİ AÇ', checking: 'KONTROL EDİLİYOR…',
       prot: 'Cloudflare ile korunuyor', privacy: 'Gizlilik', bad: 'Bu kod geçerli değil.', used: 'Bu kod zaten başka bir cihazda kullanılıyor.',
       blocked: 'Çok fazla deneme. Daha sonra tekrar dene.', closed: 'Beta henüz açılmadı. Yakında tekrar gel.', error: 'Bir şeyler ters gitti. Tekrar dene.',
       okK: 'ERİŞİM VERİLDİ', okT: 'Betaya hoş geldin', okS: 'Kodun artık bu cihaza bağlı. Güncellemeler oyunun içinden gelir.', dl: 'İNDİR',
       s1: 'İndirilen dosyayı aç.', s2: 'İstenirse bu kaynaktan uygulama yüklemeye izin ver.', s3: 'LOUDOUT’u aç — artık içeridesin.', valid: 'BAĞLANTILAR 10 DAKİKA GEÇERLİ',
       close: 'Kapat', lang: 'Dil', code: 'Davet kodu' },
-    zh: { kicker: '封闭测试', title: '输入你的邀请码', sub: '每个邀请码仅限本人使用，只能在一台设备上使用。', unlock: '解锁', checking: '正在验证…',
+    zh: { webT: "iPhone · 浏览器", webS: "无需安装，在 Safari 中游玩", play: "开始游戏", w1: "点按“开始游戏”，游戏会在 Safari 中打开。", w2: "点按“分享”，然后选择“添加到主屏幕”。", w3: "从主屏幕打开 LOUDOUT，开始游戏。",
+      kicker: '封闭测试', title: '输入你的邀请码', sub: '每个邀请码仅限本人使用，只能在一台设备上使用。', unlock: '解锁', checking: '正在验证…',
       prot: '由 Cloudflare 保护', privacy: '隐私', bad: '此邀请码无效。', used: '此邀请码已在另一台设备上使用。',
       blocked: '尝试次数过多，请稍后再试。', closed: '测试尚未开放，请稍后再来。', error: '出了点问题，请重试。',
       okK: '已获得访问权限', okT: '欢迎加入测试', okS: '你的邀请码已绑定到此设备。更新将在游戏内推送。', dl: '下载',
       s1: '打开下载的文件。', s2: '如有提示，请允许安装来自此来源的应用。', s3: '打开 LOUDOUT，开始游戏。', valid: '链接 10 分钟内有效',
       close: '关闭', lang: '语言', code: '邀请码' },
-    ja: { kicker: 'クローズドベータ', title: '招待コードを入力', sub: 'コードは個人専用で、1台の端末でのみ使えます。', unlock: 'ロック解除', checking: '確認中…',
+    ja: { webT: "iPhone · ブラウザ", webS: "インストール不要、Safari でプレイ", play: "プレイ", w1: "「プレイ」をタップすると Safari でゲームが開きます。", w2: "共有をタップし、「ホーム画面に追加」を選びます。", w3: "ホーム画面から LOUDOUT を起動すれば準備完了です。",
+      kicker: 'クローズドベータ', title: '招待コードを入力', sub: 'コードは個人専用で、1台の端末でのみ使えます。', unlock: 'ロック解除', checking: '確認中…',
       prot: 'Cloudflare で保護', privacy: 'プライバシー', bad: 'このコードは無効です。', used: 'このコードは別の端末で使用中です。',
       blocked: '試行回数が多すぎます。しばらくしてからもう一度お試しください。', closed: 'ベータはまだ開始していません。またお越しください。', error: '問題が発生しました。もう一度お試しください。',
       okK: 'アクセス許可', okT: 'ベータへようこそ', okS: 'コードはこの端末に紐付けられました。アップデートはゲーム内で届きます。', dl: 'ダウンロード',
       s1: 'ダウンロードしたファイルを開きます。', s2: '求められたら、この提供元からのアプリのインストールを許可します。', s3: 'LOUDOUT を起動すれば準備完了です。', valid: 'リンクの有効期限は10分',
       close: '閉じる', lang: '言語', code: '招待コード' },
-    ko: { kicker: '비공개 베타', title: '초대 코드를 입력하세요', sub: '코드는 개인용이며 한 대의 기기에서만 작동합니다.', unlock: '잠금 해제', checking: '확인 중…',
+    ko: { webT: "iPhone · 브라우저", webS: "설치 없이 Safari에서 플레이", play: "플레이", w1: "‘플레이’를 탭하면 Safari에서 게임이 열립니다.", w2: "공유를 탭한 다음 ‘홈 화면에 추가’를 선택하세요.", w3: "홈 화면에서 LOUDOUT을 실행하면 바로 시작됩니다.",
+      kicker: '비공개 베타', title: '초대 코드를 입력하세요', sub: '코드는 개인용이며 한 대의 기기에서만 작동합니다.', unlock: '잠금 해제', checking: '확인 중…',
       prot: 'Cloudflare로 보호됨', privacy: '개인정보', bad: '유효하지 않은 코드입니다.', used: '이 코드는 이미 다른 기기에서 사용 중입니다.',
       blocked: '시도 횟수가 너무 많습니다. 나중에 다시 시도하세요.', closed: '베타가 아직 열리지 않았습니다. 곧 다시 방문해 주세요.', error: '문제가 발생했습니다. 다시 시도하세요.',
       okK: '접근 허용', okT: '베타에 오신 것을 환영합니다', okS: '코드가 이 기기에 연결되었습니다. 업데이트는 게임 안에서 받을 수 있습니다.', dl: '다운로드',
@@ -99,6 +110,7 @@
   const SHIELD = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>';
   const ICON = {
     android: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9h12v8.5a1.5 1.5 0 0 1-1.5 1.5H16v2.5a1.5 1.5 0 0 1-3 0V19h-2v2.5a1.5 1.5 0 0 1-3 0V19h-.5A1.5 1.5 0 0 1 6 17.5zM3.5 9a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 3.5 9zm17 0a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 20.5 9zM6.2 8a6 6 0 0 1 3-4.6l-1-1.6.6-.4 1.1 1.7a6.6 6.6 0 0 1 4.2 0l1.1-1.7.6.4-1 1.6a6 6 0 0 1 3 4.6zM9.5 5.8a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4zm5 0a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4z"/></svg>',
+    web: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 3v13h8V5zm4 14.2a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8z"/></svg>',
     windows: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z"/></svg>',
   };
 
@@ -159,11 +171,17 @@
     closeBtn.setAttribute('aria-label', t('close'));
     if (state === 'ok') {
       const links = (granted && granted.links) || {};
-      const order = platform() === 'windows' ? ['windows', 'android'] : ['android', 'windows'];
+      const pf = platform();
+      // iPhone / Mac / others: the web game first (no install); Android and Windows: their download first
+      const order = pf === 'windows' ? ['windows', 'android', 'web'] : pf === 'android' ? ['android', 'windows', 'web'] : pf === 'ios' ? ['web'] : ['web', 'android', 'windows']; // an iPhone can only use the web game
+      const shown = order.filter((p) => links[p]), web = shown[0] === 'web';
+      const steps = web ? ['w1', 'w2', 'w3'] : ['s1', 's2', 's3'];
       card.innerHTML = `<div class="ldb-k">${esc(t('okK'))}</div><h2 id="ldb-title">${esc(t('okT'))}</h2><p>${esc(t('okS'))}</p>
-        <div class="ldb-plat">${order.filter((p) => links[p]).map((p, i) => `<a class="ldb-dl${i === 0 ? ' main' : ''}" href="${esc(links[p].url)}" rel="noopener" download>
+        <div class="ldb-plat">${shown.map((p, i) => p === 'web'
+          ? `<a class="ldb-dl${i === 0 ? ' main' : ''}" href="${esc(links.web.url)}">${ICON.web}<div><b>${esc(t('webT'))}</b><small>${esc(t('webS'))}</small></div><em>${esc(t('play'))}</em></a>`
+          : `<a class="ldb-dl${i === 0 ? ' main' : ''}" href="${esc(links[p].url)}" rel="noopener" download>
           ${ICON[p]}<div><b>${p === 'android' ? 'Android' : 'Windows'}</b><small>${esc(links[p].note || '')}</small></div><em>${esc(t('dl'))}</em></a>`).join('')}</div>
-        <ol class="ldb-steps"><li>${esc(t('s1'))}</li><li>${esc(t('s2'))}</li><li>${esc(t('s3'))}</li></ol>
+        <ol class="ldb-steps">${steps.map((k) => `<li>${esc(t(k))}</li>`).join('')}</ol>
         <div class="ldb-badge"><i></i>${esc(t('valid'))}</div>`;
       return;
     }
@@ -204,7 +222,7 @@
     if (busy) return;
     busy = true; msgKey = ''; render();
     if (!API) {
-      if (DEMO && codeValue === 'LDT-BETA-2345') { busy = false; granted = { links: { android: { url: '#', note: 'Build 120 · 36 MB' }, windows: { url: '#', note: 'PC · 120 MB' } } }; state = 'ok'; render(); return; }
+      if (DEMO && codeValue === 'LDT-BETA-2345') { busy = false; granted = { links: { android: { url: '#', note: 'Build 120 · 36 MB' }, windows: { url: '#', note: 'PC · 120 MB' }, web: { url: '#', note: '' } } }; state = 'ok'; render(); return; }
       setTimeout(() => (DEMO ? fail('bad') : fail('closed', true)), 600);
       return;
     }
