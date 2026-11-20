@@ -10,7 +10,7 @@
   'use strict';
 
   /** The beta service (Cloudflare Worker). Empty: not open yet. */
-  const API = '';
+  const API = 'https://loudout-beta.loudout.workers.dev';
   /** Cloudflare Turnstile site key (a public value, made to be in pages). Empty: no check widget. */
   const TURNSTILE_SITEKEY = '';
 
