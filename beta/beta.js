@@ -12,7 +12,7 @@
   /** The beta service (Cloudflare Worker). Empty: not open yet. */
   const API = 'https://loudout-beta.loudout.workers.dev';
   /** Cloudflare Turnstile site key (a public value, made to be in pages). Empty: no check widget. */
-  const TURNSTILE_SITEKEY = '';
+  const TURNSTILE_SITEKEY = '0x4AAAAAAGL5gj2omrGhzRVy'; // public by design; its secret lives only in the beta service
 
   const DEMO = !API && /[?&]demo\b/.test(location.search);
   const ALPHABET = /[^ABCDEFGHJKLMNPQRSTUVWXYZ23456789]/g; // no O/0, I/1: they look alike
@@ -159,13 +159,16 @@
   const boxLangBtn = langBtn(); const boxMenu = langMenu((k) => setLang(k));
   const closeBtn = el('button', { type: 'button', class: 'ldb-x' }, '×');
   const card = el('div', { class: 'ldb-card' });
-  wrap.append(boxLangBtn, boxMenu, closeBtn, card); veil.appendChild(wrap);
+  // Turnstile lives outside the card: the card is redrawn on every change, and redrawing would throw its token away
+  const tsHost = el('div', { class: 'ldb-ts' });
+  wrap.append(boxLangBtn, boxMenu, closeBtn, card, tsHost); veil.appendChild(wrap);
   document.body.append(pageLang, openBtn, veil);
 
   let state = 'ask', granted = null, busy = false, codeValue = '', msgKey = '', msgInfo = false, tsToken = '', tsWidget = null;
 
   const render = () => {
     document.documentElement.lang = lang;
+    tsHost.hidden = state === 'ok';
     for (const b of [pageLangBtn, boxLangBtn]) { b.querySelector('span').textContent = lang.toUpperCase(); b.setAttribute('aria-label', t('lang')); }
     for (const m of [pageMenu, boxMenu]) m.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.l === lang)));
     closeBtn.setAttribute('aria-label', t('close'));
@@ -190,7 +193,7 @@
         spellcheck="false" autocorrect="off" maxlength="16" placeholder="XXXX-XXXX" aria-label="${esc(t('code'))}"></label>
       <div class="ldb-msg${msgInfo ? ' info' : ''}" role="status" aria-live="polite">${msgKey ? esc(t(msgKey)) : ''}</div>
       <button class="ldb-go" type="submit">${busy ? `<span><i class="ldb-spin"></i>${esc(t('checking'))}</span>` : esc(t('unlock'))}</button>
-      <div class="ldb-ts"></div></form>
+</form>
       <div class="ldb-row"><span>${SHIELD}${esc(t('prot'))}</span><a href="privacy.html">${esc(t('privacy'))}</a></div>`;
     const field = card.querySelector('.ldb-field'), input = field.querySelector('input'), go = card.querySelector('.ldb-go');
     input.value = codeValue.slice(4);
@@ -218,9 +221,12 @@
     if (!info && field) { field.classList.add('bad'); }
   };
 
+  // the check usually passes on its own in a second or two; give it time before sending
+  const tokenReady = (ms) => new Promise((res) => { const t0 = Date.now(); (function poll() { if (tsToken || Date.now() - t0 > ms) res(); else setTimeout(poll, 150); })(); });
   async function redeem() {
     if (busy) return;
     busy = true; msgKey = ''; render();
+    if (API && TURNSTILE_SITEKEY) await tokenReady(12000);
     if (!API) {
       if (DEMO && codeValue === 'LDT-BETA-2345') { busy = false; granted = { links: { android: { url: '#', note: 'Build 120 · 36 MB' }, windows: { url: '#', note: 'PC · 120 MB' }, web: { url: '#', note: '' } } }; state = 'ok'; render(); return; }
       setTimeout(() => (DEMO ? fail('bad') : fail('closed', true)), 600);
@@ -245,7 +251,7 @@
   let tsLoading = false;
   function mountTurnstile() {
     if (!API || !TURNSTILE_SITEKEY) return;
-    const box = card.querySelector('.ldb-ts'); if (!box) return;
+    if (tsWidget !== null) return; // drawn once, kept across redraws
     if (!window.turnstile) {
       if (!tsLoading) {
         tsLoading = true;
@@ -256,7 +262,7 @@
       return;
     }
     tsToken = '';
-    tsWidget = window.turnstile.render(box, { sitekey: TURNSTILE_SITEKEY, appearance: 'interaction-only', theme: 'dark', language: lang,
+    tsWidget = window.turnstile.render(tsHost, { sitekey: TURNSTILE_SITEKEY, appearance: 'interaction-only', theme: 'dark', language: lang,
       callback: (tok) => { tsToken = tok; }, 'expired-callback': () => { tsToken = ''; } });
   }
   function resetTurnstile() { tsToken = ''; if (window.turnstile && tsWidget !== null) { try { window.turnstile.reset(tsWidget); } catch (e) { /* re-rendered */ } } }
